@@ -1,3 +1,2 @@
-const elements = ["1", "0", "3", "6", "9"];
-
-console.log(elements.join(" "));
+const numbers = 10369;
+console.log(String(numbers).split("").join(" "));
