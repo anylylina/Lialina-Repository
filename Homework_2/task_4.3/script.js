@@ -40,6 +40,8 @@ if (kindSport.toLowerCase() === "футбол") {
   sportMessage = "Круто! Ти хочешь стати як Олександр Усік?";
 } else if (kindSport.toLowerCase() === "фехтування") {
   sportMessage = "Круто! Ти хочешь стати як Ольга Харлан?";
+} else {
+  sportMessage = `Круто, хочешь стати чемпіоном?`;
 }
 
 alert(`Ваш вік: ${age}\n${cityMessage}\n${sportMessage}`);
