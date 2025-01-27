@@ -1,6 +1,13 @@
 function promptNumbers() {
-  for (let i = 0; i < 10; i++) {
+  const attempt = 10;
+
+  for (let i = 1; i <= attempt; i++) {
     let userInput = prompt("Введіть число більше 100!");
+
+    if (i === attempt) {
+      console.log(`Останнє введене значення: ${userInput}`);
+      return;
+    }
 
     if (userInput === null) {
       console.log("Введення скасовано");
@@ -17,9 +24,9 @@ function promptNumbers() {
     if (number > 100) {
       console.log(`Останнє введене значення: ${userInput}`);
       return;
-    } else {
-      alert("Число повинно бути більше 100!");
     }
+
+    alert("Число повинно бути більше 100!");
   }
 }
 promptNumbers();
