@@ -1,8 +1,10 @@
 const inputString = prompt("Введіть рядок:");
 
-const charsToRemoveInput = prompt("Введіть символи для видалення без пробілів");
+const charsToRemoveInput = prompt("Введіть символи для видалення через кому");
 
-const charsToRemove = charsToRemoveInput.split("");
+const hasComa = charsToRemoveInput.includes(",");
+
+const charsToRemove = charsToRemoveInput.replaceAll(" ", "").split(",");
 
 function removeChar(str, charsToRemove) {
   const pattern = new RegExp(`[${charsToRemove.join("")}]`, "g");
