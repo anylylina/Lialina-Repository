@@ -10,28 +10,30 @@
   <body>
     <div class="form-container">
       <form class="form">
-        <label for="username" class="form-label">Username</label>
-        <input
-          type="text"
-          id="username"
-          class="form-input"
-          placeholder="Enter username" />
+        <div class="name-group">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-input" placeholder="Enter username" />
+        </div>
 
-        <label for="password" class="form-label">Password</label>
-        <input
-          type="password"
-          id="password"
-          class="form-input"
-          placeholder="Enter password" />
-        <p class="helper-text">Your password is between 4 and 12 characters</p>
+        <div class="password-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-input"
+            placeholder="Enter password" />
+          <p class="helper-text">
+            Your password is between 4 and 12 characters
+          </p>
+        </div>
 
-        <label for="input-text" class="form=label">Input Text Label</label>
-        <input
-          type="text"
-          id="input-text"
-          class="form-input error-input"
-          placeholder="Enter text" />
-        <p class="error-message">Error message informing me of a problem</p>
+        <div class="text-group">
+          <label for="input-text" class="form=label">Input Text Label</label>
+          <input
+            type="text"
+            class="form-input error-input"
+            placeholder="Enter text" />
+          <p class="error-message">Error message informing me of a problem</p>
+        </div>
 
         <div class="checkbox-group">
           <label> <input type="checkbox" /> Remember me </label>
@@ -39,7 +41,7 @@
         </div>
 
         <fieldset class="radio-group">
-          <legend class="form-label">Radio selection</legend>
+          <!-- <legend class="form-label"></legend> -->
           <label> <input type="radio" name="radio" /> Radio selection 1 </label>
           <label> <input type="radio" name="radio" /> Radio selection 2 </label>
           <label> <input type="radio" name="radio" /> Radio selection 3 </label>
