@@ -10,41 +10,49 @@
   <body>
     <div class="form-container">
       <form class="form">
-        <div class="name-group">
+        <div class="group">
           <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-input" placeholder="Enter username" />
+          <input type="text" class="input" placeholder="Enter username" />
         </div>
 
-        <div class="password-group">
+        <div class="group">
           <label for="password" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-input"
-            placeholder="Enter password" />
+          <input type="password" class="input" placeholder="Enter password" />
           <p class="helper-text">
             Your password is between 4 and 12 characters
           </p>
         </div>
 
-        <div class="text-group">
-          <label for="input-text" class="form=label">Input Text Label</label>
+        <div class="group">
+          <label for="input" class="form-label">Input Text Label</label>
           <input
             type="text"
-            class="form-input error-input"
+            class="input error-input"
             placeholder="Enter text" />
           <p class="error-message">Error message informing me of a problem</p>
         </div>
 
         <div class="checkbox-group">
           <label> <input type="checkbox" /> Remember me </label>
-          <label> <input type="checkbox" /> Off </label>
+          <label class="switch">
+            <input type="checkbox" /> <span class="slider">Off</span>
+          </label>
         </div>
 
         <fieldset class="radio-group">
           <!-- <legend class="form-label"></legend> -->
-          <label> <input type="radio" name="radio" /> Radio selection 1 </label>
-          <label> <input type="radio" name="radio" /> Radio selection 2 </label>
-          <label> <input type="radio" name="radio" /> Radio selection 3 </label>
+          <label>
+            <input type="radio" name="radio" />
+            <span class="radio-label">Radio selection 1</span>
+          </label>
+          <label>
+            <input type="radio" name="radio" />
+            <span class="radio-label">Radio selection 1</span>
+          </label>
+          <label>
+            <input type="radio" name="radio" />
+            <span class="radio-label">Radio selection 1</span>
+          </label>
         </fieldset>
 
         <label for="dropdown" class="form-label">Dropdown Title</label>
@@ -55,8 +63,8 @@
         </select>
 
         <div class="button-group">
-          <button type="button" class="cancel-button">Cancel</button>
-          <button type="submit" class="next-button">Next</button>
+          <button type="button" class="button button-secondary">Cancel</button>
+          <button type="submit" class="button button-primery">Next</button>
         </div>
       </form>
     </div>
