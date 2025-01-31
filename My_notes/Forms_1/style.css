@@ -88,6 +88,14 @@ body {
   color: #666;
 }
 
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 16px;
+  color: #666;
+}
+
 .radio-group {
   margin-bottom: 32px;
   border: none;
