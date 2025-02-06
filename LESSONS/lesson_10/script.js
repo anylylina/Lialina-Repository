@@ -224,10 +224,10 @@
 
 //массив обьектів
 
-const orders = [
-  { customer: "Олена", drink: "Латте", size: "M" },
-  { customer: "Дмитро", drink: "Еспресо", size: "S" },
-  { customer: "Аліна", drink: "Капучіно", size: "L" },
-];
+// const orders = [
+//   { customer: "Олена", drink: "Латте", size: "M" },
+//   { customer: "Дмитро", drink: "Еспресо", size: "S" },
+//   { customer: "Аліна", drink: "Капучіно", size: "L" },
+// ];
 
-console.log(orders[1].drink);
+// console.log(orders[1].drink);
