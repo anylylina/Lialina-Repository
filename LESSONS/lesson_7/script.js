@@ -292,3 +292,38 @@
 // console.log(factorial(1));
 
 //_____________________________________
+//Чиста функція - це функція яка нічого не повертає і ніяк не впливає на зовнішній контекст
+//_____________________________________
+//Каррінг -це техніка в функціональному програмуванні, яка полягає в трансформації функції з багатьма аргументами у послідовність функцій з одним аргументом кожна.
+//_____________________________________
+
+// function curryAdd(x) {
+//   return function (y) {
+//     return x + y;
+//   };
+// }
+
+// const addFive = curryAdd(5);
+
+// console.log(addFive(10));
+// console.log(addFive(3));
+//_____________________________________
+
+// function configureRequest(method) {
+//   return function (url) {
+//     return function (data) {
+//       return {
+//         method,
+//         url,
+//         data,
+//       };
+//     };
+//   };
+// }
+
+// const postToApi = configureRequest("POST");
+// const postToUsers = postToApi("/users");
+
+// console.log(postToUsers({ name: "Олексій", age: 30 }));
+//_____________________________________
+//callack, асинхронніст, функціі вищого порядку, методи, curring
