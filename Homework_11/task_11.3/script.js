@@ -10,6 +10,8 @@ const images = [
   "images/9.jpg",
 ];
 
+const imageElement = document.getElementById("random-image");
+
 function loadRandomImage() {
   const imageElement = document.getElementById("random-image");
   const randomIndex = Math.floor(Math.random() * images.length);
