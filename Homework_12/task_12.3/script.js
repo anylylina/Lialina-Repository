@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (taskText === "") return;
 
     const li = document.createElement("li");
-    li.innerHTML = `${taskText} <button class="delete-btn">Видалити</button>`;
+    const deleteBtn = document.createElement("button");
+
+    li.textContent = taskText;
+    deleteBtn.textContent = "Видалити";
+    deleteBtn.classList.add("delete-btn");
+
+    li.appendChild(deleteBtn);
     taskList.appendChild(li);
     taskInput.value = "";
   });
