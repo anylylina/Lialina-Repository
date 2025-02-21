@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- <form id="registrationForm">
+      <label for="username">Імʼя:</label>
+      <input type="text" id="username" name="username" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="current-password">Пароль:</label>
+      <input
+        type="current-password"
+        id="current-password"
+        name="current-password" />
+
+      <button type="submit">Зареєструватись</button>
+    </form>
+
+    <p id="errorMassege" style="color: red"></p> -->
+
+    <!-- <form id="surveyForm">
+      <label>Оберіть ваш вік:</label>
+
+      <select id="age">
+        <option value="">Оберіть</option>
+        <option value="18-25">18-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36+">36+</option>
+      </select>
+
+      <div>
+        <label>Ваші вподобання:</label>
+
+        <div>
+          <input type="checkbox" id="news" name="preferences" value="news" />
+          <label for="news">Новини</label>
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            id="offers"
+            name="preferences"
+            value="offers" />
+
+          <label for="offers">Спеціальні пропозиції</label>
+        </div>
+      </div>
+
+      <button type="submit">Надіслати</button>
+    </form>
+
+    <p id="surveyMessage"></p> -->
+
+    <!-- RegEx Форми та регулярні вирази - 
+     regular expretion (спуціальни виразу для пошуку та введення текстових данних) 
+     Валідація- це коли ми обтеднужмо наші форми та регулярні вирази -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form action="/seach.php" method="get">
+      <label for="query">Пошук:</label>
+      <input type="text" id="query" name="query" required />
+
+      <button type="submit">Знайти</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <label><input type="radio" name="gender" id="male" />Чоловік</label>
+    <label><input type="radio" name="gender" id="female" />Жінка</label> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="name">Імʼя</label>
+      <input type="text" id="name" name="name" required />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="phone">Телефон:</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        required
+        title="Введіть 10 цифр" />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="age">Вік:</label>
+      <input type="number" name="age" id="age" min="18" max="99" required />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+    <!-- _____________________________________________________________ -->
+    <!-- 
+    <form>
+      <label for="password">Пароль:</label>
+      <input
+        type="password"
+        name=""
+        id="password"
+        minlength="6"
+        maxlength="920"
+        required />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="username">Логін:</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        pattern="[a-zA-Z0-0]{4,12}"
+        minlength="4"
+        maxlength="12"
+        required
+        title="Логін має містити тільки літери та цифри (4-12 символів)" />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form id="emailForm">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" />
+      <span id="error-message" style="color: red"></span>
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+    <!-- 
+    <form id="emailForm">
+      <label for="email">Email:</label>
+      <input id="email" name="email" />
+      <span id="error-message" style="color: red"></span>
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+    <!-- <form>
+      <label for="gender">Оберіть стать:</label>
+      <select id="gender">
+        <option value="">-- Оберіть --</option>
+        <option value="male">Чоловік</option>
+        <option value="female">Жінка</option>
+      </select>
+
+      <p id="output"></p>
+    </form> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <form>
+      <label for="username">Логін:</label>
+      <input type="text" name="username" id="username" />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- _________________Робота з данними форми JS____________________________________________ -->
+
+    <!-- <input type="text" id="username" placeholder="Введіть Імʼя:" />
+    <button onclick="getText()">Отримати Імʼя</button>
+    <p id="output"></p> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <input type="checkbox" id="agree" /> Я погоджуюсь
+    <button onclick="checkStatus()">Перевірити</button>
+    <p id="status"></p> -->
+
+    <!-- _____________________________________________________________ -->
+
+    <!-- <select id="city">
+      <option value="kyiv">Київ</option>
+      <option value="lviv">Львів</option>
+      <option value="kharkiv">Харків</option>
+    </select>
+
+    <button onclick="getCity()">Вибрати місто</button>
+    <p id="city-output"></p> -->
+
+    <!-- _____________________________________________________________ -->
+    <!-- <form id="resetForm">
+      <input type="text" id="name" placeholder="Імʼя" />
+      <button type="reset">Очистити</button>
+    </form>
+
+    <p id="resetMessage"></p> -->
+
+    <!-- ____________________Конструктор FORM DATA_________________________________________ -->
+
+    <!-- <h2>Форма реєстрації</h2>
+
+    <form id="userForm">
+      <label for="username">Імʼя користувача</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label>Хоббі:</label>
+      <input type="checkbox" name="hobbies" value="reading" required />
+      <input type="checkbox" name="hobbies" value="sports" required />
+      <input type="checkbox" name="hobbies" value="musik" required />
+
+      <label for="city">Місто:</label>
+      <select name="city" id="city">
+        <option value="kyiv">Київ</option>
+        <option value="lviv">Львів</option>
+        <option value="odessa">Одеса</option>
+      </select>
+
+      <label for="profilePicture">Аватар:</label>
+      <input type="file" id="profilePicture" name="profilePicture" />
+
+      <button type="submit">Відправити</button>
+    </form> -->
+
+    <!-- ___________________РЕГУЛЯРНІ ВИРАЗИ__________________________________________ -->
+
+    <!-- ШАБЛОНИ Які використувоються для пошуку перевірки заміни тексту -->
+    <!-- Літеральний запис -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>

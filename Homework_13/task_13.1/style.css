@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "monserr-bold";
+  src: url(../task_13.1/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: "monserr-reg";
+  src: url(../task_13.1/fonts/Montserrat-Regular.ttf);
+}
+
+body {
+  font-family: "monserr-bold";
+  background-color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: #f5f5fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 510px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+  color: #f0145a;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  color: black;
+  font-family: monserr-reg;
+  width: 100%;
+  padding: 15px;
+  border: 1px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #b3b3ba;
+}
+
+p {
+  color: #b3b3ba;
+  font-size: 14px;
+  font-family: "monserr-bold";
+  padding-top: 30px;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #24a3ff;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "monserr-bold";
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #0085ff;
+}
+
+.error-message {
+  font-family: "monserr-reg";
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
