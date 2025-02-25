@@ -25,7 +25,7 @@ document
       isValid = false;
     }
 
-    const phoneRegex = /^(?:\+380|0)(\d{2})\s?\d{3}[-]?\d{2}[-]?\d{2}$/;
+    const phoneRegex = /^\+380\d{9}$/;
     if (!phoneRegex.test(phone)) {
       showError(
         "phone-error",
@@ -47,6 +47,8 @@ document
         Phone: phone,
         Email: email,
       });
+
+      document.getElementById("contact-form").reset();
     }
   });
 
