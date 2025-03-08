@@ -292,3 +292,91 @@
 
 // console.log(factorial(5));
 // console.log(factorial(3));
+//____________Массиви______________________________
+//массиви - структура яка дозводяє зберігати кілька значень в одній змінній
+// const fruits = ["apple", "banana", "orange"];
+
+// const firstFruit = fruits[0];
+// const secondFruit = fruits[1];
+// const thirdFruit = fruits[2];
+
+// fruits.push("Grapes"); //додає Grapes до кінця массиву
+// //fruits.pop() //видаляє останній елемент массиву
+
+// fruits.unshift("Srawberry"); //додає на початок массиву
+// //fruits.shift() //видаляє перший елемент масиву
+
+// console.log(fruits);
+
+// console.log(firstFruit);
+// console.log(secondFruit);
+// console.log(thirdFruit);
+
+// const numbers = [1, 2, 3, 4, 5];
+
+//_________________for Each_________________________
+// const fruits = ["apple", "banana", "orange"];
+
+// const firstFruit = fruits[0];
+// const secondFruit = fruits[1];
+// const thirdFruit = fruits[2];
+
+// console.log(fruits);
+
+// fruits.forEach(function (item, index) {
+//   //викликаємо ключ і індекс
+//   console.log(item, index);
+// });
+
+// const filteredFruits = fruits.filter(function (fruit) {
+//   // фільтруємо масив
+//   return fruit !== "banana";
+// });
+
+// console.log(filteredFruits);
+//__________________________________________
+// function findMin(array) {
+//   if (array.length === 0) {
+//     return null;
+//   }
+
+//   let minValue = array[0];
+
+//   for (let i = 1; i < array.length; i++) {
+//     if (array[i] < minValue) {
+//       minValue = array[i];
+//     }
+//   }
+
+//   return minValue;
+// }
+
+// const numbers = [10, 15, 20, 25, 30];
+// const minValue = findMin(numbers);
+// console.log("Мінімальне значення:", minValue);
+
+// function findMin(array) {
+//   // Перевірка на те, чи масив не пустий
+//   if (array.length === 0) {
+//     return null; // Повертаємо null, якщо масив пустий
+//   }
+
+//   // Ініціалізуємо мінімальне значення першим елементом масиву
+//   let minValue = array[0];
+
+//   // Перебираємо всі елементи в масиві
+//   for (let i = 1; i < array.length; i++) {
+//     // Якщо знайдемо менший елемент, оновлюємо мінімальне значення
+//     if (array[i] < minValue) {
+//       minValue = array[i];
+//     }
+//   }
+
+//   // Повертаємо знайдене мінімальне значення
+//   return minValue;
+// }
+
+// // Приклад використання
+// const numbers = [5, 3, 9, 1, 4];
+// const minValue = findMin(numbers);
+// console.log("Мінімальне значення:", minValue);

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,40 @@
     <h1>Home</h1>
     <p>Змінні та типи данних в js</p>
 
-    <script src="./main.js"></script>
+    <script src="./main.js">
+
+    </script>
+  </body>
+</html> -->
+
+<!-- html
+Copy code -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Task</title>
+  </head>
+  <body>
+    <p id="myParagraph">Початковий текст</p>
+    <button onclick="changeText('myParagraph', 'Новий текст')">
+      Змінити текст
+    </button>
+
+    <script>
+      function changeText(elementId, newParagraf) {
+        const element = document.getElementById(elementId);
+
+        if (element) {
+          element.textContent = newText;
+        } else {
+          console.log("Елемент з ідентифікатором" + elementId + "не знайдено");
+        }
+      }
+
+      changeText("newText", "Новий текст");
+      // Створіть функцію changeText для зміни тексту елемента
+
+      // module.exports = changeText; // не видаляти цей код
+    </script>
   </body>
 </html>
