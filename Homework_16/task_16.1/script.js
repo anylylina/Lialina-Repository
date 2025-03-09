@@ -5,7 +5,6 @@ class Student {
     this.birthYear = birthYear;
     this.grades = grades;
     this.attendance = new Array(25).fill(null);
-    this.attendanceIndex = 0;
   }
 
   getAge() {
@@ -20,20 +19,20 @@ class Student {
   }
 
   present() {
-    if (this.attendanceIndex < 25) {
-      this.attendance[this.attendanceIndex] = true;
-      this.attendanceIndex++;
+    const index = this.attendance.indexOf(null);
+    if (index !== -1) {
+      this.attendance[index] = true;
     } else {
-      console.log("Досягнуто максимальну кількість відвідувань (25).");
+      console.log("Досягнуто максимальну кількість відвідувань (25)");
     }
   }
 
   absent() {
-    if (this.attendanceIndex < 25) {
-      this.attendance[this.attendanceIndex] = false;
-      this.attendanceIndex++;
+    const index = this.attendance.indexOf(null);
+    if (index !== -1) {
+      this.attendance[index] = false;
     } else {
-      console.log("Досягнуто максимальну кількість відвідувань (25)");
+      console.log('"Досягнуто максимальну кількість відвідувань (25)"');
     }
   }
 
