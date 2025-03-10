@@ -380,3 +380,9 @@
 // const numbers = [5, 3, 9, 1, 4];
 // const minValue = findMin(numbers);
 // console.log("Мінімальне значення:", minValue);
+//_______________________________________________
+function changeText(elementId, newParagraf) {
+  let element = document.getElementById(elementId);
+
+  element.textContent = newParagraf;
+}

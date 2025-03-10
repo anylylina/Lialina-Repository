@@ -1,0 +1,44 @@
+body {
+  background-color: antiquewhite;
+}
+
+.time-container {
+  background-color: white;
+  border: 2px solid #333;
+  width: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+#startButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#startButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
