@@ -1,0 +1,153 @@
+/* body {
+  background-color: grey;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+} */
+/* 
+.user-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-card {
+  background: lightgrey;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.user-card p {
+  margin: 5px 0;
+}
+
+.user-card.admin {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.user-card.customer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.user-card button {
+  background: #f60;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: 14px;
+  font-size: 14px;
+}
+
+.user-card button:disabled {
+  background: gray;
+  cursor: not-allowed;
+} */
+
+/* .user-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+}
+
+/* Заголовок имени */
+/* .user-card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 20px;
+} */
+
+/* Email и другие поля */
+/* .user-card p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #555;
+} */
+
+/* Для админов — отдельный цвет */
+/* .user-card.admin {
+  background-color: #ffe8e8;
+  border-left: 5px solid #e53935;
+} */
+
+/* Для клієнтів — другой цвет */
+/* .user-card.customer {
+  background-color: #e8f7ff;
+  border-left: 5px solid #0288d1;
+} */
+
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
