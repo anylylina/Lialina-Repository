@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ДЗ 19.1. Віджет погоди</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="weather-widget">
+      <div id="date">Дата: --</div>
+      <div id="time">Час: --</div>
+      <div id="location">Локація: --</div>
+      <div class="temperature"><span id="temp">--</span>°C</div>
+      <div id="description">--</div>
+      <div id="weather-icon">
+        <img id="icon" src="" alt="Weather icon" />
+      </div>
+      <button class="refresh-btn" onclick="getWeather()">Оновити</button>
+    </div>
+
+    <script>
+      const apiKey = "7509e1d0430940c17286baa52896bbc0";
+      const lat = 46.47;
+      const lon = 30.74;
+
+      function updateDateTime() {
+        const now = new Date();
+        const dateStr = now.toLocaleDateString("uk-UA", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const timeStr = now.toLocaleTimeString("uk-UA", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        document.getElementById("date").textContent = `Дата: ${dateStr}`;
+        document.getElementById("time").textContent = `Час: ${timeStr}`;
+      }
+
+      async function getWeather() {
+        updateDateTime();
+
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=ua`;
+
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+
+          document.getElementById(
+            "location"
+          ).textContent = `Локація: ${data.name}`;
+          document.getElementById("temp").textContent = Math.round(
+            data.main.temp
+          );
+          document.getElementById("description").textContent =
+            data.weather[0].description;
+
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+          document.getElementById("icon").src = iconUrl;
+        } catch (error) {
+          console.error("Не вдалось отримати дані погоди.");
+        }
+      }
+
+      getWeather();
+    </script>
+  </body>
+</html>
