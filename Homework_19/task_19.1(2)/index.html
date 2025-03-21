@@ -87,7 +87,13 @@
       }
 
       async function getWeather(city) {
-        const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric&lang=ua`;
+        const params = new URLSearchParams({
+          q: city,
+          appid: apiKey,
+          units: "metric",
+          lang: "ua",
+        });
+        const url = `${apiUrl}?${params.toString()}`;
 
         try {
           const res = await fetch(url);
