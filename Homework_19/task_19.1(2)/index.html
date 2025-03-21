@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second page with weather-widget</title>
+  </head>
+  <body>
+    <div class="weather-widget">
+      <div id="date">Дата: --</div>
+      <div id="time">Час: --</div>
+      <div id="location">Локація: --</div>
+      <div class="temperature"><span id="temp">--</span>°C</div>
+      <div id="description">--</div>
+      <div id="weather-icon">
+        <img id="icon" src="" alt="Weather icon" />
+      </div>
+
+      <div class="city">
+        <label for="cars">Choose a city:</label>
+
+        <select id="city">
+          <option value="">--</option>
+          <option value="Kiev">Kiev</option>
+          <option value="Odesa">Odesa</option>
+          <option value="Lviv">Lviv</option>
+          <option value="Dnipro">Dnipro</option>
+          <option value="Kharkiv">Kharkiv</option>
+          <option value="Poltava">Poltava</option>
+          <option value="Kremenchuk">Kremenchuk</option>
+          <option value="Sumi">Sumi</option>
+          <option value="Ivano-Frankivsk">Ivano-Frankivsk</option>
+          <option value="Chernivtsi">Chernivtsi</option>
+          <option value="Ternopil">Ternopil</option>
+        </select>
+      </div>
+      <button class="refresh-btn" onclick="updateWeather()">Оновити</button>
+    </div>
+
+    <script>
+      const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
+      const apiKey = "7509e1d0430940c17286baa52896bbc0";
+
+      function updateDateTime(date) {
+        if (!date) {
+          document.getElementById("date").textContent = `Дата: --`;
+          document.getElementById("time").textContent = `Час: --`;
+        } else {
+          const daysUkr = [
+            "неділя",
+            "понеділок",
+            "вівторок",
+            "середа",
+            "четвер",
+            "п’ятниця",
+            "субота",
+          ];
+          const monthsUkr = [
+            "січня",
+            "лютого",
+            "березня",
+            "квітня",
+            "травня",
+            "червня",
+            "липня",
+            "серпня",
+            "вересня",
+            "жовтня",
+            "листопада",
+            "грудня",
+          ];
+
+          const dayName = daysUkr[date.getDay()];
+          const day = date.getDate();
+          const month = monthsUkr[date.getMonth()];
+          const year = date.getFullYear();
+
+          const dateStr = `${dayName}, ${day} ${month} ${year}`;
+          const timeStr = date.toLocaleTimeString("uk-UA", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          document.getElementById("date").textContent = `Дата: ${dateStr}`;
+          document.getElementById("time").textContent = `Час: ${timeStr}`;
+        }
+      }
+
+      async function getWeather(city) {
+        const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric&lang=ua`;
+
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+
+          return data;
+        } catch (error) {
+          console.error("Не вдалось отримати дані погоди.");
+        }
+      }
+
+      async function updateWeather() {
+        const select = document.getElementById("city");
+
+        const city = select.value;
+
+        if (city) {
+          createWeather(city);
+        } else {
+          resetWeather();
+        }
+      }
+
+      function dropDown() {
+        const select = document.getElementById("city");
+        select.addEventListener("change", async (event) => {
+          const city = event.target.value;
+
+          if (city) {
+            createWeather(city);
+          } else {
+            resetWeather();
+          }
+        });
+      }
+
+      async function createWeather(city) {
+        const weatherData = await getWeather(city);
+        console.log(weatherData);
+        renderWeather({
+          location: weatherData.name,
+          temp: weatherData.main.temp,
+          description: weatherData.weather[0].description,
+          iconCode: weatherData.weather[0].icon,
+          date: new Date(),
+        });
+      }
+
+      function resetWeather() {
+        renderWeather({
+          location: "--",
+          temp: "",
+          description: "--",
+          icon: "",
+          date: null,
+        });
+      }
+
+      function renderWeather({ location, temp, description, iconCode, date }) {
+        document.getElementById(
+          "location"
+        ).textContent = `Локація: ${location}`;
+        document.getElementById("temp").textContent = temp
+          ? Math.round(temp)
+          : "--";
+        document.getElementById("description").textContent = description;
+
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+        document.getElementById("icon").src = iconUrl;
+
+        updateDateTime(date);
+      }
+
+      async function start() {
+        dropDown();
+      }
+
+      start();
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to top, #1e3c72, #2a5298);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .weather-widget {
+        text-align: center;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 320px;
+      }
+
+      .weather-widget div {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .temperature {
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      #icon {
+        width: 80px;
+        height: 80px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #icon:hover {
+        transform: scale(1.1);
+      }
+
+      .city label {
+        font-size: 16px;
+      }
+
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        outline: none;
+        appearance: none;
+        cursor: pointer;
+      }
+
+      select option {
+        background: #1e3c72;
+        color: white;
+      }
+
+      .refresh-btn {
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 16px;
+        background: #ff9800;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .refresh-btn:hover {
+        background: #e68900;
+      }
+    </style>
+  </body>
+</html>
