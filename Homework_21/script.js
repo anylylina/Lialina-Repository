@@ -1,31 +1,35 @@
-$(document).ready(function () {
-  let todos = JSON.parse(localStorage.getItem("todos")) || [];
+$(document).ready(() => {
+  const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
-  function saveToLocalStorage() {
+  const saveToLocalStorage = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
-  }
+  };
 
-  function renderTodos() {
+  const renderTodos = () => {
     $("#todo-list").empty();
-    todos.forEach((todo, index) => {
-      const todoItem = $(`
-                <li class="list-group-item">
-                    <input type="checkbox" class="todo-check" ${
-                      todo.completed ? "checked" : ""
-                    } data-index="${index}">
-                    <span class="todo-text ${
-                      todo.completed ? "completed" : ""
-                    }" data-bs-toggle="modal" data-bs-target="#todoModal" data-index="${index}">${
-        todo.text
-      }</span>
-                    <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">Видалити</button>
-                </li>
-            `);
-      $("#todo-list").append(todoItem);
-    });
-  }
 
-  $("#todo-form").submit(function (event) {
+    $("#todo-list").append(
+      todos
+        .map(
+          ({ text, completed }, index) => `
+            <li class="list-group-item">
+                <input type="checkbox" class="todo-check" 
+                  ${completed ? "checked" : ""} 
+                  data-index="${index}">
+                <span class="todo-text ${completed ? "completed" : ""}" 
+                  data-bs-toggle="modal" data-bs-target="#todoModal" 
+                  data-index="${index}">
+                  ${text}
+                </span>
+                <button class="btn btn-danger btn-sm delete-btn" 
+                  data-index="${index}">Видалити</button>
+            </li>`
+        )
+        .join("")
+    );
+  };
+
+  $("#todo-form").submit((event) => {
     event.preventDefault();
     const newTodoText = $("#todo-input").val().trim();
     if (!newTodoText) return;
@@ -38,7 +42,7 @@ $(document).ready(function () {
 
   $("#todo-list").on("click", ".todo-check", function () {
     const index = $(this).data("index");
-    todos[index].completed = !todos[index].completed;
+    todos[index] = { ...todos[index], completed: !todos[index].completed };
     saveToLocalStorage();
     renderTodos();
   });
@@ -51,8 +55,8 @@ $(document).ready(function () {
   });
 
   $("#todo-list").on("click", ".todo-text", function () {
-    const index = $(this).data("index");
-    $("#modal-text").text(todos[index].text);
+    const { text } = todos[$(this).data("index")];
+    $("#modal-text").text(text);
   });
 
   renderTodos();
