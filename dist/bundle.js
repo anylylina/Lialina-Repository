@@ -1,0 +1,1 @@
+(()=>{"use strict";const o=(o="guest")=>`Hello ${o}`;var e;console.log(o((e="john")[0].toUpperCase()+e.slice(1))),console.log(o("john".toUpperCase())),console.log((o=>o.split(" ").map((o=>o[0])).join(""))("john doe"))})();

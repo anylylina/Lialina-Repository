@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-  "build:script": "babel ./Homework_21/script.js -o ./Homework_21/script-compiled.js"
+    "build:script": "babel ./Homework_21/script.js -o ./Homework_21/build/script-compiled.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,13 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^9.23.0"
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "eslint": "^9.23.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.86.3",
+    "sass-loader": "^16.0.5",
+    "webpack": "^5.99.2",
+    "webpack-cli": "^6.0.1"
   }
 }
