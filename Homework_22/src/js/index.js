@@ -1,4 +1,5 @@
 import "../styles/style.scss";
+import "../images/image1.jpg";
 import { formatMessage } from "../js/format";
 
 const app = document.createElement("div");

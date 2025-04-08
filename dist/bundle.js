@@ -1,15 +1,1 @@
-(() => {
-  "use strict";
-  const e = document.createElement("div");
-  e.className = "app";
-  const t = document.createElement("h2");
-  (t.textContent = ` ${"Welcome!".toUpperCase()} `), e.appendChild(t);
-  const n = document.createElement("button");
-  (n.textContent = "Click here⬇️"),
-    e.appendChild(n),
-    document.body.appendChild(e),
-    n.addEventListener("click", () => {
-      console.log("Кнопка була натиснута!");
-    }),
-    console.log("Сторінка завантажена");
-})();
+(()=>{"use strict";var e={};e.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),(()=>{var t;e.g.importScripts&&(t=e.g.location+"");var r=e.g.document;if(!t&&r&&(r.currentScript&&"SCRIPT"===r.currentScript.tagName.toUpperCase()&&(t=r.currentScript.src),!t)){var n=r.getElementsByTagName("script");if(n.length)for(var c=n.length-1;c>-1&&(!t||!/^http(s?):/.test(t));)t=n[c--].src}if(!t)throw new Error("Automatic publicPath is not supported in this browser");t=t.replace(/^blob:/,"").replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),e.p=t})();e.p;const t=document.createElement("div");t.className="app";const r=document.createElement("h2");r.textContent=` ${"Welcome!".toUpperCase()} `,t.appendChild(r);const n=document.createElement("button");n.textContent="Click here⬇️",t.appendChild(n),document.body.appendChild(t),n.addEventListener("click",(()=>{console.log("Кнопка була натиснута!")})),console.log("Сторінка завантажена")})();
