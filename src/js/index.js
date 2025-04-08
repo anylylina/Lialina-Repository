@@ -1,4 +1,5 @@
-import initials, { capitalize, upper } from "./format.js";
+import initials, { capitalize, upper } from "./format";
+import "../styles/home.scss";
 
 const greet = (name = "guest") => {
   return `Hello ${name}`;

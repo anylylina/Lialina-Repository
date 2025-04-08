@@ -1,1 +1,15 @@
-(()=>{"use strict";const o=(o="guest")=>`Hello ${o}`;var e;console.log(o((e="john")[0].toUpperCase()+e.slice(1))),console.log(o("john".toUpperCase())),console.log((o=>o.split(" ").map((o=>o[0])).join(""))("john doe"))})();
+(() => {
+  "use strict";
+  const e = document.createElement("div");
+  e.className = "app";
+  const t = document.createElement("h2");
+  (t.textContent = ` ${"Welcome!".toUpperCase()} `), e.appendChild(t);
+  const n = document.createElement("button");
+  (n.textContent = "Click here⬇️"),
+    e.appendChild(n),
+    document.body.appendChild(e),
+    n.addEventListener("click", () => {
+      console.log("Кнопка була натиснута!");
+    }),
+    console.log("Сторінка завантажена");
+})();

@@ -1,0 +1,40 @@
+body {
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+  font-family: "Arial", sans-serif;
+  margin: 20px 0;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.app {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: lightblue;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #86f0f4;
+}
