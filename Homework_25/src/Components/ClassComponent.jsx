@@ -5,7 +5,7 @@ class ClassComponent extends Component {
     super(props);
     const storedVotes = JSON.parse(localStorage.getItem("emojiVotes")) || {};
     this.state = {
-      emojis: ["😄", "😍", "😎", "🤔", "😢", "😡"],
+      emojis: ["😃", "☺️", "😎", "🤩", "😍"],
       votes: storedVotes,
       winner: null,
     };
