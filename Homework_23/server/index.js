@@ -4,17 +4,15 @@ const Todo = require("./models/ToDo");
 require("./db");
 
 const app = express();
-const port = 5000;
+const port = 3001;
 
-// Дозволяємо доступ з фронтенду
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
+app.use(cors());
 app.use(express.json());
 
-// Створити нове завдання
 app.post("/api/todos", async (req, res) => {
   try {
-    const { title } = req.body;
-    const newTodo = new Todo({ title, completed: false });
+    const { text } = req.body;
+    const newTodo = new Todo({ text, completed: false });
     const savedTodo = await newTodo.save();
     res.status(201).json(savedTodo);
   } catch (error) {
@@ -23,7 +21,6 @@ app.post("/api/todos", async (req, res) => {
   }
 });
 
-// Отримати всі завдання
 app.get("/api/todos", async (req, res) => {
   try {
     const todos = await Todo.find();
@@ -33,7 +30,6 @@ app.get("/api/todos", async (req, res) => {
   }
 });
 
-// Оновити завдання (виконано / не виконано)
 app.put("/api/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -49,7 +45,6 @@ app.put("/api/todos/:id", async (req, res) => {
   }
 });
 
-// Видалити завдання
 app.delete("/api/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -60,7 +55,6 @@ app.delete("/api/todos/:id", async (req, res) => {
   }
 });
 
-// Запуск сервера
 app.listen(port, () => {
   console.log(`RESTful API запущено на http://localhost:${port}`);
 });

@@ -1,10 +1,9 @@
-const API_URL = "http://localhost:5000/api/todos";
+const API_URL = "http://localhost:3001/api/todos";
 
 const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-// Завантажити всі завдання при завантаженні сторінки
 document.addEventListener("DOMContentLoaded", loadTodos);
 
 async function loadTodos() {
@@ -12,7 +11,7 @@ async function loadTodos() {
     const res = await fetch(API_URL);
     const todos = await res.json();
 
-    todoList.innerHTML = ""; // Очистити список
+    todoList.innerHTML = "";
 
     todos.forEach((todo) => {
       const li = createTodoElement(todo);
@@ -25,14 +24,13 @@ async function loadTodos() {
 
 function createTodoElement(todo) {
   const li = document.createElement("li");
-  li.textContent = todo.title;
+  li.textContent = todo.text;
   li.dataset.id = todo._id;
 
   if (todo.completed) {
     li.style.textDecoration = "line-through";
   }
 
-  // Позначити як виконане
   li.addEventListener("click", async () => {
     await fetch(`${API_URL}/${todo._id}`, {
       method: "PUT",
@@ -42,12 +40,11 @@ function createTodoElement(todo) {
     loadTodos();
   });
 
-  // Кнопка видалення
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "×";
   deleteBtn.classList.add("delete-btn");
   deleteBtn.addEventListener("click", async (e) => {
-    e.stopPropagation(); // Щоб не викликалось оновлення при кліку
+    e.stopPropagation();
     await fetch(`${API_URL}/${todo._id}`, {
       method: "DELETE",
     });
@@ -61,13 +58,13 @@ function createTodoElement(todo) {
 // Додати нове завдання
 todoForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const title = todoInput.value.trim();
-  if (!title) return;
+  const text = todoInput.value.trim();
+  if (!text) return;
 
   await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title }),
+    body: JSON.stringify({ text }),
   });
 
   todoInput.value = "";
