@@ -5,6 +5,7 @@ import leia from "../assets/characters/leia.jpg";
 import yoda from "../assets/characters/yoda.jpg";
 import obi from "../assets/characters/obi.jpg";
 import "../index.css";
+import { formatBirthYear } from "../utils/formatBirthYear";
 
 const characterImages = {
   "Luke Skywalker": luke,
@@ -15,17 +16,6 @@ const characterImages = {
 };
 
 const CharacterCard = ({ id, name, height, gender, birthYear }) => {
-  const formatBirthYear = (birthYear) => {
-    if (!birthYear) return "Невідомо";
-    if (birthYear.includes("BBY")) {
-      return `${birthYear.replace("BBY", "").trim()} років до битви при Явіні`;
-    } else if (birthYear.includes("ABY")) {
-      return `${birthYear
-        .replace("ABY", "")
-        .trim()} років після битви при Явіні`;
-    }
-    return birthYear;
-  };
   return (
     <div className="border border-white bg-gray-800 rounded-lg shadow-md overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform duration-300 ease-in-out min-w-[250px] w-60">
       <img

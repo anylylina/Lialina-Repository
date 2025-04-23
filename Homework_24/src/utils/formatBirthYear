@@ -1,0 +1,9 @@
+export const formatBirthYear = (birthYear) => {
+  if (!birthYear) return "Невідомо";
+  if (birthYear.includes("BBY")) {
+    return `${birthYear.replace("BBY", "").trim()} років до битви при Явіні`;
+  } else if (birthYear.includes("ABY")) {
+    return `${birthYear.replace("ABY", "").trim()} років після битви при Явіні`;
+  }
+  return birthYear;
+};
