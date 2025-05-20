@@ -4,7 +4,7 @@ const About = () => {
       <img
         src="/avat.JPG"
         alt="Avatar"
-        className="w-40 h-40 object-cover rounded-full border-4 border-blue-300 shadow-md"
+        className="w-40 h-40 object-cover rounded-full border-4 border-pink-300 shadow-md"
       />
 
       <div>
